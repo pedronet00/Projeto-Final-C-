@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="64e82141dcad4be29332d0ba8469e473" Name="Diagram1">
+        <EntityTypeShape EntityType="Projeto2022Model.Cliente" Width="1.5" PointX="3.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projeto2022Model.Empresa" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projeto2022Model.FormaPagamento" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projeto2022Model.Fornecedor" Width="1.5" PointX="8.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projeto2022Model.Funcionario" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projeto2022Model.Movimentacao" Width="1.5" PointX="8" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projeto2022Model.Produto" Width="1.5" PointX="10.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projeto2022Model.TipoProduto" Width="1.5" PointX="8.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projeto2022Model.TipoTransacao" Width="1.5" PointX="5.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projeto2022Model.Usuario" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projeto2022Model.Venda" Width="1.5" PointX="6" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projeto2022Model.VendaItem" Width="1.5" PointX="2.75" PointY="11.125" IsExpanded="true" />
+        <AssociationConnector Association="Projeto2022Model.FK_Venda_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Projeto2022Model.FK_Venda_FormaPagamento" ManuallyRouted="false" />
+        <AssociationConnector Association="Projeto2022Model.FK_Usuario_Funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Projeto2022Model.FK_Venda_Funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Projeto2022Model.FK_Movimentacao_TipoTransacao" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

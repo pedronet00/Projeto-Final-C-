@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Projeto2022Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="CPF" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="RG" Type="nvarchar" MaxLength="9" />
+    <Property Name="DataNascimento" Type="datetime" Nullable="false" />
+    <Property Name="EstadoCivil" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Sexo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Endereco" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Numero" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="Telefone" Type="nvarchar" MaxLength="15" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="Cep" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CNPJ" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="InscricaoEstadual" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="NomeFantasia" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="RazaoSocial" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Endereco" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Numero" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="Cidade" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Estado" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Telefone" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="120" />
+    <Property Name="Site" Type="nvarchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="FormaPagamento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fornecedor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="CPF" Type="nvarchar" MaxLength="11" />
+    <Property Name="CNPJ" Type="nvarchar" MaxLength="14" />
+    <Property Name="Telefone" Type="nvarchar" MaxLength="15" />
+    <Property Name="Cep" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Endereco" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Numero" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="Cidade" Type="nvarchar" MaxLength="70" />
+    <Property Name="Estado" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Funcionario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="CPF" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="Matricula" Type="int" Nullable="false" />
+    <Property Name="DataNascimento" Type="datetime" Nullable="false" />
+    <Property Name="DataAdmissao" Type="datetime" Nullable="false" />
+    <Property Name="Departamento" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Cargo" Type="nvarchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Movimentacao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Receita" Type="bit" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="IdTipoTransacao" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="IdTipoProduto" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="text" Nullable="false" />
+    <Property Name="Quantidade" Type="int" Nullable="false" />
+    <Property Name="IdFornecedor" Type="int" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoProduto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoTransacao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Senha" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="IdFuncionario" Type="int" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Venda">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="NotaFiscal" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="ValorTotal" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="IdCliente" Type="int" Nullable="false" />
+    <Property Name="IdFormaPagamento" Type="int" Nullable="false" />
+    <Property Name="IdFuncionario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VendaItem">
+    <Key>
+      <PropertyRef Name="IdVenda" />
+      <PropertyRef Name="IdProduto" />
+    </Key>
+    <Property Name="IdVenda" Type="int" Nullable="false" />
+    <Property Name="IdProduto" Type="int" Nullable="false" />
+    <Property Name="Quantidade" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Movimentacao_TipoTransacao">
+    <End Role="TipoTransacao" Type="Self.TipoTransacao" Multiplicity="1" />
+    <End Role="Movimentacao" Type="Self.Movimentacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoTransacao">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movimentacao">
+        <PropertyRef Name="IdTipoTransacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Funcionario">
+    <End Role="Funcionario" Type="Self.Funcionario" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IdFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Venda_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Venda" Type="Self.Venda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Venda">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Venda_FormaPagamento">
+    <End Role="FormaPagamento" Type="Self.FormaPagamento" Multiplicity="1" />
+    <End Role="Venda" Type="Self.Venda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FormaPagamento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Venda">
+        <PropertyRef Name="IdFormaPagamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Venda_Funcionario">
+    <End Role="Funcionario" Type="Self.Funcionario" Multiplicity="1" />
+    <End Role="Venda" Type="Self.Venda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Venda">
+        <PropertyRef Name="IdFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Projeto2022ModelStoreContainer">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FormaPagamento" EntityType="Self.FormaPagamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fornecedor" EntityType="Self.Fornecedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Funcionario" EntityType="Self.Funcionario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movimentacao" EntityType="Self.Movimentacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Produto" EntityType="Self.Produto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoProduto" EntityType="Self.TipoProduto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoTransacao" EntityType="Self.TipoTransacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Venda" EntityType="Self.Venda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VendaItem" EntityType="Self.VendaItem" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Movimentacao_TipoTransacao" Association="Self.FK_Movimentacao_TipoTransacao">
+      <End Role="TipoTransacao" EntitySet="TipoTransacao" />
+      <End Role="Movimentacao" EntitySet="Movimentacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Funcionario" Association="Self.FK_Usuario_Funcionario">
+      <End Role="Funcionario" EntitySet="Funcionario" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Venda_Cliente" Association="Self.FK_Venda_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Venda" EntitySet="Venda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Venda_FormaPagamento" Association="Self.FK_Venda_FormaPagamento">
+      <End Role="FormaPagamento" EntitySet="FormaPagamento" />
+      <End Role="Venda" EntitySet="Venda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Venda_Funcionario" Association="Self.FK_Venda_Funcionario">
+      <End Role="Funcionario" EntitySet="Funcionario" />
+      <End Role="Venda" EntitySet="Venda" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
